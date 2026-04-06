@@ -44,7 +44,21 @@ Provide a brief outline/overview of the steps involved in a supervised machine l
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+1. Data Collection: The foundation of any model is data. In supervised learning, this means gathering a dataset that is "labeled," meaning both the input features (the variables you use to make predictions) and the target output (the known answer you want to predict) are present.
+
+2. Data Preprocessing: Real-world data is rarely clean. This step involves handling missing values, removing duplicates, and addressing outliers. It also includes transforming data into a format the model can understand, such as encoding categorical variables (like turning "Red," "Green," "Blue" into numbers) and scaling numerical features.
+
+3. Data Splitting: The dataset is divided into distinct subsets to ensure the model can learn and then be tested fairly. Typically, it is split into a Training Set (usually 70-80% of the data to train the model) and a Testing Set (the remaining 20-30% to evaluate its performance on unseen data). Sometimes a third Validation Set is used for fine-tuning.
+
+4. Model Selection: Based on the problem type—either Classification (predicting a category, like "spam" or "not spam") or Prediction (predicting a continuous number, like a house price)—you choose an appropriate algorithm to start with, such as Linear Regression, Decision Trees, or Support Vector Machines.
+
+5. Model Training: The chosen algorithm is fed the training data. The model learns by identifying patterns and mathematical relationships between the input features and the known target labels, iteratively adjusting its internal parameters to minimize errors.
+
+6. Model Evaluation: Once trained, the model is tested using the unseen testing set. Its predictions are compared against the actual labels using specific metrics (like Accuracy, Precision, and Recall for classification; or Mean Squared Error for regression) to measure how well it performs.
+
+7. Hyperparameter Tuning: If the model's performance isn't optimal, you adjust its "hyperparameters" (the configuration settings of the algorithm itself, like the depth of a decision tree) and retrain it to improve accuracy and prevent overfitting (where the model memorizes the training data but fails on new data).
+
+8. Deployment and Monitoring: The finalized model is deployed into a production environment where it can start making predictions on entirely new, live data. It is continuously monitored over time to ensure its accuracy doesn't degrade as real-world data patterns change.
 
 :::
 
@@ -55,7 +69,9 @@ Explain the difference between supervised and unsupervised learning.
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+The fundamental difference between supervised and unsupervised machine learning centers on the type of data they process and their primary objectives. Supervised learning acts like learning with a guide; it relies on labeled data, meaning the input features are already paired with known target outputs. Its main goal is to learn these relationships to accurately predict outcomes or classify entirely new data, much like a student taking practice tests with an answer key. Common applications include classification and regression tasks, such as predicting whether a patient has a specific disease based on their medical history. 
+
+In contrast, unsupervised learning involves learning by discovery. It uses raw, unlabeled data without any provided answers, leaving the model entirely on its own to explore and uncover hidden structures, patterns, or natural groupings. This approach is frequently used for tasks like clustering or dimensionality reduction, akin to a child independently sorting a random box of Lego pieces by color and size. A common real-world application of unsupervised learning is grouping a company's diverse customer base into distinct purchasing segments for targeted marketing.
 
 :::
 
@@ -68,7 +84,7 @@ In general, we can classify a model by its purpose into 1 of the 3 categories be
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Descriptive models are designed to summarize and explain historical data, focusing primarily on answering "what happened" or "what currently exists." Instead of trying to forecast the future or establish deep causal relationships, these models organize, condense, and visualize data to uncover basic patterns, trends, and structures. For instance, calculating the average age of a customer base or using unsupervised learning to cluster those customers into distinct geographic segments are classic examples of descriptive modeling, as they simply describe the information directly in front of them.
 
 :::
 
@@ -77,7 +93,7 @@ YOUR SOLUTION HERE
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Inferential models shift the focus toward understanding "why" something happened by measuring the mathematical relationships between different variables. These models typically analyze a sample of data and attempt to draw broader statistical conclusions, or inferences, about a much larger population. Their primary goal is to test hypotheses, establish statistical significance, and determine exactly how a change in one specific feature impacts the target outcome, such as analyzing whether a recent marketing campaign directly caused an increase in sales or calculating how much a neighborhood's median income affects local house prices.
 
 :::
 
@@ -86,7 +102,7 @@ YOUR SOLUTION HERE
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Predictive models are built with the primary goal of forecasting "what will happen next" or accurately guessing an unknown value. By learning patterns and relationships from historical data, these models are optimized to make highly accurate predictions on brand-new, unseen data. Unlike inferential models, which prioritize explaining the "why" and isolating individual variables, predictive models focus almost entirely on the pure accuracy of the final forecast, making them ideal for everyday machine learning tasks like predicting tomorrow's weather, forecasting next quarter's revenue, or automatically flagging an incoming email as spam.
 
 :::
 
@@ -246,7 +262,7 @@ A company with a subscription based service (for example Netflix, Disney+, New Y
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+This is an inferential problem.
 
 :::
 
@@ -255,7 +271,7 @@ YOUR SOLUTION HERE
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+This is a prediction problem.
 
 :::
 
