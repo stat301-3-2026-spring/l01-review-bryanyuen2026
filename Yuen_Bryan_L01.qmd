@@ -117,7 +117,7 @@ What does it mean to be a mechanistic model?
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+A mechanistic model assumes a specific underlying mathematical structure or "mechanism" for how the input variables relate to the output. You start by assuming a functional form—such as a linear equation—and then use the data to estimate the specific coefficients (the parameters) of that equation. It is essentially a "theory-first" approach where you define the shape of the relationship before looking deeply at the data.
 
 :::
 
@@ -128,7 +128,7 @@ What does it mean to be an empirically driven model?
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+An empirically driven model takes the opposite approach: it makes no strict assumptions about the specific mathematical shape of the relationship. Instead of forcing the data to fit a pre-defined equation, it lets the data dictate the shape of the model entirely. It is a "data-first" approach that seeks to find whatever pattern minimizes the error, regardless of how complex the resulting underlying math becomes.
 
 :::
 
@@ -139,7 +139,9 @@ How does the mechanistic and empirically driven model terminology relate to the 
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Mechanistic models align with Parametric models: Because a mechanistic model assumes a specific functional form (like $Y = \beta_0 + \beta_1X$), it reduces the problem of estimating an entire unknown function down to just estimating a fixed, finite set of parameters (in this case, $\beta_0$ and $\beta_1$).
+
+Empirically driven models align with Nonparametric models: Because they do not assume a specific functional form, they do not have a fixed set of parameters to estimate. Instead, the model's structure and the effective number of parameters can grow and adapt based on the size and complexity of the dataset.
 
 :::
 
@@ -150,7 +152,7 @@ In general, is a mechanistic or empirically driven model easier to interpret? Ex
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Mechanistic models are generally much easier to interpret. Because a mechanistic model relies on a defined mathematical formula, the relationship between the inputs and the output is transparent. For example, in a mechanistic model like linear regression, you can look at a specific coefficient and say, "For every one-unit increase in $X$, $Y$ increases by exactly this amount." You can clearly explain how the model is making its decisions.Empirically driven models, on the other hand, often create highly complex, winding decision boundaries to perfectly fit the data. Models like deep neural networks or random forests are famously considered "black boxes." While they might make highly accurate predictions, it is incredibly difficult to extract a simple explanation of exactly how each individual input variable influenced the final output.
 
 :::
 
@@ -161,7 +163,9 @@ How does mechanistic and empirically driven model terminology relate to the idea
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Empirically driven models are highly flexible. Because they are not bound by a pre-set formula, they can bend, curve, and adapt to capture highly complex, non-linear relationships in the data.
+
+Mechanistic models are relatively inflexible (rigid). If you assume a linear mechanistic model, the model can only ever draw a straight line. No matter how curved or complex the actual data is, a rigid model cannot adapt to fit it perfectly.
 
 :::
 
@@ -172,7 +176,11 @@ Describe the bias-variance trade-off when considering the use of a mechanistic o
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+When choosing between a mechanistic and an empirically driven model, you are directly trading off bias and variance. Bias is the error introduced by approximating a real-life problem (which may be extremely complicated) by a much simpler model. Variance refers to how much your model's predictions would change if you estimated it using a different training dataset.
+
+Because they are inflexible, mechanistic models are prone to high bias. If the real-world relationship is highly curved, but your model assumes a straight line, your model will consistently miss the mark (underfitting). However, because they are rigid, they have low variance. If you gather a new batch of data and retrain the model, the resulting straight line won't change very much. It doesn't overreact to random noise in the data.
+
+Because they are highly flexible, empirically driven models have low bias. They can easily bend to perfectly capture the true shape of the data. However, this flexibility leads to high variance. The model is so eager to fit the data that it will often memorize the random noise and outliers in your specific training set (overfitting). If you train the model on a slightly different dataset, the highly flexible shape of the model might change drastically.
 
 :::
 
@@ -183,7 +191,7 @@ Explain the difference between a regression and classification machine learning 
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+The fundamental difference between regression and classification machine learning problems lies entirely in the type of output they are trying to predict. In a regression problem, the goal is to predict a continuous, numerical value. This means the model's output is a real number that can fall anywhere along a scale, such as forecasting tomorrow's exact temperature, estimating the future price of a house, or predicting a person's age. On the other hand, a classification problem involves predicting a discrete, categorical label. Instead of outputting a continuous number, the model sorts data into a specific class or group from a predefined set of options. Classic examples include determining whether an incoming email is "spam" or "not spam," diagnosing a medical scan as "benign" or "malignant," or identifying if a photo contains a "cat," "dog," or "bird." Ultimately, if your goal is to predict "how much" or "how many," you are dealing with a regression task; if you are trying to predict "what kind" or "which category," it is a classification task.
 
 :::
 
@@ -194,7 +202,13 @@ When splitting the data, why is it useful to stratify by the outcome/target vari
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+When you split a dataset into training and testing sets, stratifying ensures that both the training and testing subsets maintain the exact same proportion of the target variable classes as the original, complete dataset.
+
+In classification problems, it helps with handling Imbalanced Data: if your target variable is heavily skewed (e.g., predicting bank fraud where 99% of transactions are legitimate and only 1% are fraudulent), a completely random split could be disastrous. Purely by chance, all 1% of the fraudulent cases could end up in the test set, leaving the model with absolutely no examples of fraud to learn from during training. Stratification guarantees that 1% of the training set and 1% of the test set will contain fraud cases.
+
+If your testing set has a completely different distribution of classes than the real world, your performance metrics (like accuracy or F1-score) will be completely misleading. Stratification ensures your test set acts as an accurate, scaled-down miniature of your overall data, making your evaluation metrics trustworthy.
+
+Machine learning algorithms need sufficient examples of every class to learn the decision boundaries effectively. By guaranteeing a representative sample in the training set, stratification stabilizes the learning process and prevents the algorithm from completely ignoring rare outcomes.
 
 :::
 
@@ -205,7 +219,17 @@ Briefly describe how v-fold cross validation with repeats is used to estimate te
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+How it works:
+
+1. Standard $v$-Fold CV (The Inner Loop): First, you randomly shuffle your training data and divide it into $v$ equal-sized chunks (called "folds"). You train your model on $v-1$ of those folds and test it on the 1 remaining holdout fold to calculate an RMSE. You repeat this $v$ times until every single fold has been used as the test set exactly once.
+
+2. The "Repeats" (The Outer Loop): Once that first full round of cross-validation is done, you completely start over. You take your original dataset, re-shuffle it, and create a brand-new set of $v$ random folds. You run the entire standard $v$-fold CV process all over again.
+
+3. The Final Calculation: You do this entire re-shuffling and cross-validation process $R$ times (where $R$ is your number of repeats). Your final, official test RMSE estimate is the grand average of every single individual RMSE calculated across all folds and all repeats (which will be a total of $v \times R$ scores).
+
+Why use it:
+
+We use repeated $v$-fold cross-validation primarily to reduce the variance of our performance estimate.When you run a standard, single $v$-fold cross validation, your final RMSE score is highly dependent on how the data was randomly split that one specific time. Purely by chance, you might get a "lucky" random split where the training data perfectly aligns with the test data, making your model look artificially highly accurate. Conversely, you might get an "unlucky" split that makes the model look terrible.By completely re-shuffling the data and repeating the entire process multiple times, you smooth out this randomness. It practically eliminates the "luck of the draw" from your data splitting, resulting in a much more stable, reliable, and confident estimate of how your model will truly perform on completely unseen, real-world data.
 
 :::
 
@@ -216,7 +240,11 @@ When might we use a bootstrap resampling procedure instead of v-fold cross valid
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+When we have a small dataset. In v-fold cross-validation, you have to split your data into subsets. If you only have 50 total observations and you use 5-fold CV, your model is only training on 40 examples and testing on 10. This can lead to highly unstable models and a test RMSE that fluctuates wildly depending on which 10 instances ended up in the test fold (high variance). Bootstrapping helps mitigate this. Because it samples with replacement, it creates a new training set of the exact same size as your original dataset. On average, about 63.2% of your original data ends up in the bootstrap sample, while the remaining 36.8% is left out (these are called "Out-Of-Bag" or OOB samples). You train on the bootstrap sample and calculate the RMSE on the OOB samples. Averaging this over hundreds of bootstrap iterations gives you a much more stable, lower-variance estimate of your model's true performance than CV would on a tiny dataset.
+
+When we need confidence intervals for RMSE. If you don't just want a single point estimate for your RMSE (e.g., "The RMSE is 12.5"), but you want to understand the uncertainty around that estimate (e.g., "I am 95% confident the true RMSE is between 10.2 and 14.8"), bootstrapping is the ideal tool.
+
+Because bootstrapping simulates the process of drawing new samples from the population, it allows you to build a complete statistical distribution of your RMSE. Cross-validation simply doesn't yield enough data points (usually just 5 or 10 fold scores) to reliably calculate confidence intervals.
 
 :::
 
@@ -227,7 +255,9 @@ Briefly describe model tuning and why we use it.
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Model tuning, frequently referred to as hyperparameter tuning, is the process of adjusting the external configuration "settings" of a machine learning algorithm. While a model automatically learns its internal parameters (like the mathematical weights or coefficients) directly from the training data, hyperparameters are the structural choices made by the data scientist before training even begins. Examples include setting the maximum depth of a decision tree, choosing the learning rate for a neural network, or deciding the number of neighbors to look at in a K-Nearest Neighbors model. Tuning involves systematically testing different combinations of these settings to see which configuration produces the most accurate predictions.
+
+We use model tuning to optimize the model's overall performance and ensure it generalizes well to brand-new, unseen data. Specifically, it is the primary tool we use to manage the bias-variance trade-off, and prevent over/underfitting.
 
 :::
 
@@ -238,7 +268,7 @@ What are two common performance metrics when dealing with a regression ML proble
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Root Mean Squared Error (RMSE) and R-Squared ($R^2$).
 
 :::
 
@@ -247,7 +277,9 @@ What are two common performance metrics when dealing with a classification ML pr
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Accuracy = (TP + TN)/n = % of correct predictions out of all predictions
+
+Precision = TP/(TP + FP) = Positive Predictive Value (PPV) = % of correct "A" predictions out of all "A" predictions
 
 :::
 
@@ -262,7 +294,7 @@ A company with a subscription based service (for example Netflix, Disney+, New Y
 ::: {.callout-tip icon="false"}
 ## Solution
 
-This is an inferential problem.
+This is an inferential problem. The primary goal of this question is to understand the relationship between a specific input variable (the number of service calls) and the target outcome (churn). The company is asking "why" churn happens and is trying to isolate the effect of one particular feature. They want to know if there is a statistically significant link between calling customer service often and leaving the platform. This requires an inferential model that prioritizes interpretability so you can clearly see how that specific variable influences the result.
 
 :::
 
@@ -271,7 +303,7 @@ This is an inferential problem.
 ::: {.callout-tip icon="false"}
 ## Solution
 
-This is a prediction problem.
+This is a prediction problem. The primary goal here is to forecast a future event as accurately as possible for individual customers. The company wants to generate a specific probability score (e.g., "Customer A has an 85% chance of churning"). In this scenario, understanding why the customer is churning or isolating the exact impact of their service calls takes a back seat to simply getting the most accurate forecast possible. The company would likely use a highly flexible, predictive machine learning model to flag these high-risk customers so they can immediately send them targeted retention offers.
 
 :::
 
