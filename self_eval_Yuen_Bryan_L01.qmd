@@ -1,0 +1,672 @@
+---
+title: "Self Evaluation L01 Review"
+subtitle: |
+  | Data Science 2 with R 
+  | STAT 301-3
+author: "Bryan Yuen"
+pagetitle: "Self Evaluation L01 Bryan Yuen"
+date: today
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 4
+    toc-location: left
+    embed-resources: true
+    code-fold: false
+    link-external-newwindow: true
+
+execute:
+  warning: false
+  error: true
+
+from: markdown+emoji
+reference-location: margin
+citation-location: margin 
+---
+
+::: {.callout-tip icon="false"}
+## Github Repo Link
+
+[Bryan's L01 GitHub](https://github.com/stat301-3-2026-spring/l01-review-bryanyuen2026)
+:::
+
+## Overview
+
+The goal of this lab is to review machine learning/predictive modeling vocabulary and concepts covered in Data Science 2 with R (STAT 301-2).
+
+## Questions
+
+When completing the following questions ensure your solutions are neatly formatted and clearly indicated. Consider including diagrams/images in some of your solutions, if it helps to make things easier to describe/discuss.
+
+### Question 1
+
+Provide a brief outline/overview of the steps involved in a supervised machine learning process. Could provide this as a bulleted list. 
+
+::: {.callout-tip icon="false"}
+## Solution
+
+1. Data Collection: The foundation of any model is data. In supervised learning, this means gathering a dataset that is "labeled," meaning both the input features (the variables you use to make predictions) and the target output (the known answer you want to predict) are present.
+
+2. Data Preprocessing: Real-world data is rarely clean. This step involves handling missing values, removing duplicates, and addressing outliers. It also includes transforming data into a format the model can understand, such as encoding categorical variables (like turning "Red," "Green," "Blue" into numbers) and scaling numerical features.
+
+3. Data Splitting: The dataset is divided into distinct subsets to ensure the model can learn and then be tested fairly. Typically, it is split into a Training Set (usually 70-80% of the data to train the model) and a Testing Set (the remaining 20-30% to evaluate its performance on unseen data). Sometimes a third Validation Set is used for fine-tuning.
+
+4. Model Selection: Based on the problem type—either Classification (predicting a category, like "spam" or "not spam") or Prediction (predicting a continuous number, like a house price)—you choose an appropriate algorithm to start with, such as Linear Regression, Decision Trees, or Support Vector Machines.
+
+5. Model Training: The chosen algorithm is fed the training data. The model learns by identifying patterns and mathematical relationships between the input features and the known target labels, iteratively adjusting its internal parameters to minimize errors.
+
+6. Model Evaluation: Once trained, the model is tested using the unseen testing set. Its predictions are compared against the actual labels using specific metrics (like Accuracy, Precision, and Recall for classification; or Mean Squared Error for regression) to measure how well it performs.
+
+7. Hyperparameter Tuning: If the model's performance isn't optimal, you adjust its "hyperparameters" (the configuration settings of the algorithm itself, like the depth of a decision tree) and retrain it to improve accuracy and prevent overfitting (where the model memorizes the training data but fails on new data).
+
+8. Deployment and Monitoring: The finalized model is deployed into a production environment where it can start making predictions on entirely new, live data. It is continuously monitored over time to ensure its accuracy doesn't degrade as real-world data patterns change.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+### Question 2
+
+Explain the difference between supervised and unsupervised learning.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+The fundamental difference between supervised and unsupervised machine learning centers on the type of data they process and their primary objectives. Supervised learning acts like learning with a guide; it relies on labeled data, meaning the input features are already paired with known target outputs. Its main goal is to learn these relationships to accurately predict outcomes or classify entirely new data, much like a student taking practice tests with an answer key. Common applications include classification and regression tasks, such as predicting whether a patient has a specific disease based on their medical history. 
+
+In contrast, unsupervised learning involves learning by discovery. It uses raw, unlabeled data without any provided answers, leaving the model entirely on its own to explore and uncover hidden structures, patterns, or natural groupings. This approach is frequently used for tasks like clustering or dimensionality reduction, akin to a child independently sorting a random box of Lego pieces by color and size. A common real-world application of unsupervised learning is grouping a company's diverse customer base into distinct purchasing segments for targeted marketing.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+### Question 3 
+
+In general, we can classify a model by its purpose into 1 of the 3 categories below. Provide a brief description of the goals of these model classes.
+
+#### Descriptive Models 
+
+::: {.callout-tip icon="false"}
+## Solution
+
+Descriptive models are designed to summarize and explain historical data, focusing primarily on answering "what happened" or "what currently exists." Instead of trying to forecast the future or establish deep causal relationships, these models organize, condense, and visualize data to uncover basic patterns, trends, and structures. For instance, calculating the average age of a customer base or using unsupervised learning to cluster those customers into distinct geographic segments are classic examples of descriptive modeling, as they simply describe the information directly in front of them.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+#### Inferential Models
+
+::: {.callout-tip icon="false"}
+## Solution
+
+Inferential models shift the focus toward understanding "why" something happened by measuring the mathematical relationships between different variables. These models typically analyze a sample of data and attempt to draw broader statistical conclusions, or inferences, about a much larger population. Their primary goal is to test hypotheses, establish statistical significance, and determine exactly how a change in one specific feature impacts the target outcome, such as analyzing whether a recent marketing campaign directly caused an increase in sales or calculating how much a neighborhood's median income affects local house prices.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+#### Predictive Models
+
+::: {.callout-tip icon="false"}
+## Solution
+
+Predictive models are built with the primary goal of forecasting "what will happen next" or accurately guessing an unknown value. By learning patterns and relationships from historical data, these models are optimized to make highly accurate predictions on brand-new, unseen data. Unlike inferential models, which prioritize explaining the "why" and isolating individual variables, predictive models focus almost entirely on the pure accuracy of the final forecast, making them ideal for everyday machine learning tasks like predicting tomorrow's weather, forecasting next quarter's revenue, or automatically flagging an incoming email as spam.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+### Question 4 
+
+We can further describe/classify predictive models by how they were derived or developed as being either mechanistic or empirically driven. 
+
+#### Part (a)
+
+What does it mean to be a mechanistic model?
+
+::: {.callout-tip icon="false"}
+## Solution
+
+A mechanistic model assumes a specific underlying mathematical structure or "mechanism" for how the input variables relate to the output. You start by assuming a functional form—such as a linear equation—and then use the data to estimate the specific coefficients (the parameters) of that equation. It is essentially a "theory-first" approach where you define the shape of the relationship before looking deeply at the data.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+#### Part (b)
+
+What does it mean to be an empirically driven model?
+
+::: {.callout-tip icon="false"}
+## Solution
+
+An empirically driven model takes the opposite approach: it makes no strict assumptions about the specific mathematical shape of the relationship. Instead of forcing the data to fit a pre-defined equation, it lets the data dictate the shape of the model entirely. It is a "data-first" approach that seeks to find whatever pattern minimizes the error, regardless of how complex the resulting underlying math becomes.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+#### Part (c)
+
+How does the mechanistic and empirically driven model terminology relate to the parametric and nonparametric model terminology? 
+
+::: {.callout-tip icon="false"}
+## Solution
+
+Mechanistic models align with Parametric models: Because a mechanistic model assumes a specific functional form (like $Y = \beta_0 + \beta_1X$), it reduces the problem of estimating an entire unknown function down to just estimating a fixed, finite set of parameters (in this case, $\beta_0$ and $\beta_1$).
+
+Empirically driven models align with Nonparametric models: Because they do not assume a specific functional form, they do not have a fixed set of parameters to estimate. Instead, the model's structure and the effective number of parameters can grow and adapt based on the size and complexity of the dataset.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+#### Part (d)
+
+In general, is a mechanistic or empirically driven model easier to interpret? Explain.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+Mechanistic models are generally much easier to interpret. Because a mechanistic model relies on a defined mathematical formula, the relationship between the inputs and the output is transparent. For example, in a mechanistic model like linear regression, you can look at a specific coefficient and say, "For every one-unit increase in $X$, $Y$ increases by exactly this amount." You can clearly explain how the model is making its decisions.Empirically driven models, on the other hand, often create highly complex, winding decision boundaries to perfectly fit the data. Models like deep neural networks or random forests are famously considered "black boxes." While they might make highly accurate predictions, it is incredibly difficult to extract a simple explanation of exactly how each individual input variable influenced the final output.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+#### Part (e)
+
+How does mechanistic and empirically driven model terminology relate to the idea of model flexibility? That is, which would be more or less flexible than the other.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+Empirically driven models are highly flexible. Because they are not bound by a pre-set formula, they can bend, curve, and adapt to capture highly complex, non-linear relationships in the data.
+
+Mechanistic models are relatively inflexible (rigid). If you assume a linear mechanistic model, the model can only ever draw a straight line. No matter how curved or complex the actual data is, a rigid model cannot adapt to fit it perfectly.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+#### Part (f)
+
+Describe the bias-variance trade-off when considering the use of a mechanistic or empirically driven model. 
+
+::: {.callout-tip icon="false"}
+## Solution
+
+When choosing between a mechanistic and an empirically driven model, you are directly trading off bias and variance. Bias is the error introduced by approximating a real-life problem (which may be extremely complicated) by a much simpler model. Variance refers to how much your model's predictions would change if you estimated it using a different training dataset.
+
+Because they are inflexible, mechanistic models are prone to high bias. If the real-world relationship is highly curved, but your model assumes a straight line, your model will consistently miss the mark (underfitting). However, because they are rigid, they have low variance. If you gather a new batch of data and retrain the model, the resulting straight line won't change very much. It doesn't overreact to random noise in the data.
+
+Because they are highly flexible, empirically driven models have low bias. They can easily bend to perfectly capture the true shape of the data. However, this flexibility leads to high variance. The model is so eager to fit the data that it will often memorize the random noise and outliers in your specific training set (overfitting). If you train the model on a slightly different dataset, the highly flexible shape of the model might change drastically.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+### Question 5 
+
+Explain the difference between a regression and classification machine learning (ML) problems.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+The fundamental difference between regression and classification machine learning problems lies entirely in the type of output they are trying to predict. In a regression problem, the goal is to predict a continuous, numerical value. This means the model's output is a real number that can fall anywhere along a scale, such as forecasting tomorrow's exact temperature, estimating the future price of a house, or predicting a person's age. On the other hand, a classification problem involves predicting a discrete, categorical label. Instead of outputting a continuous number, the model sorts data into a specific class or group from a predefined set of options. Classic examples include determining whether an incoming email is "spam" or "not spam," diagnosing a medical scan as "benign" or "malignant," or identifying if a photo contains a "cat," "dog," or "bird." Ultimately, if your goal is to predict "how much" or "how many," you are dealing with a regression task; if you are trying to predict "what kind" or "which category," it is a classification task.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+### Question 6 
+
+When splitting the data, why is it useful to stratify by the outcome/target variable? 
+
+::: {.callout-tip icon="false"}
+## Solution
+
+When you split a dataset into training and testing sets, stratifying ensures that both the training and testing subsets maintain the exact same proportion of the target variable classes as the original, complete dataset.
+
+In classification problems, it helps with handling Imbalanced Data: if your target variable is heavily skewed (e.g., predicting bank fraud where 99% of transactions are legitimate and only 1% are fraudulent), a completely random split could be disastrous. Purely by chance, all 1% of the fraudulent cases could end up in the test set, leaving the model with absolutely no examples of fraud to learn from during training. Stratification guarantees that 1% of the training set and 1% of the test set will contain fraud cases.
+
+If your testing set has a completely different distribution of classes than the real world, your performance metrics (like accuracy or F1-score) will be completely misleading. Stratification ensures your test set acts as an accurate, scaled-down miniature of your overall data, making your evaluation metrics trustworthy.
+
+Machine learning algorithms need sufficient examples of every class to learn the decision boundaries effectively. By guaranteeing a representative sample in the training set, stratification stabilizes the learning process and prevents the algorithm from completely ignoring rare outcomes.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+### Question 7 
+
+Briefly describe how v-fold cross validation with repeats is used to estimate test RMSE. Also provide an explanation of why we use it. 
+
+::: {.callout-tip icon="false"}
+## Solution
+
+How it works:
+
+1. Standard $v$-Fold CV (The Inner Loop): First, you randomly shuffle your training data and divide it into $v$ equal-sized chunks (called "folds"). You train your model on $v-1$ of those folds and test it on the 1 remaining holdout fold to calculate an RMSE. You repeat this $v$ times until every single fold has been used as the test set exactly once.
+
+2. The "Repeats" (The Outer Loop): Once that first full round of cross-validation is done, you completely start over. You take your original dataset, re-shuffle it, and create a brand-new set of $v$ random folds. You run the entire standard $v$-fold CV process all over again.
+
+3. The Final Calculation: You do this entire re-shuffling and cross-validation process $R$ times (where $R$ is your number of repeats). Your final, official test RMSE estimate is the grand average of every single individual RMSE calculated across all folds and all repeats (which will be a total of $v \times R$ scores).
+
+Why use it:
+
+We use repeated $v$-fold cross-validation primarily to reduce the variance of our performance estimate.When you run a standard, single $v$-fold cross validation, your final RMSE score is highly dependent on how the data was randomly split that one specific time. Purely by chance, you might get a "lucky" random split where the training data perfectly aligns with the test data, making your model look artificially highly accurate. Conversely, you might get an "unlucky" split that makes the model look terrible.By completely re-shuffling the data and repeating the entire process multiple times, you smooth out this randomness. It practically eliminates the "luck of the draw" from your data splitting, resulting in a much more stable, reliable, and confident estimate of how your model will truly perform on completely unseen, real-world data.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+### Question 8
+
+When might we use a bootstrap resampling procedure instead of v-fold cross validation to estimate test RMSE?
+
+::: {.callout-tip icon="false"}
+## Solution
+
+When we have a small dataset. In v-fold cross-validation, you have to split your data into subsets. If you only have 50 total observations and you use 5-fold CV, your model is only training on 40 examples and testing on 10. This can lead to highly unstable models and a test RMSE that fluctuates wildly depending on which 10 instances ended up in the test fold (high variance). Bootstrapping helps mitigate this. Because it samples with replacement, it creates a new training set of the exact same size as your original dataset. On average, about 63.2% of your original data ends up in the bootstrap sample, while the remaining 36.8% is left out (these are called "Out-Of-Bag" or OOB samples). You train on the bootstrap sample and calculate the RMSE on the OOB samples. Averaging this over hundreds of bootstrap iterations gives you a much more stable, lower-variance estimate of your model's true performance than CV would on a tiny dataset.
+
+When we need confidence intervals for RMSE. If you don't just want a single point estimate for your RMSE (e.g., "The RMSE is 12.5"), but you want to understand the uncertainty around that estimate (e.g., "I am 95% confident the true RMSE is between 10.2 and 14.8"), bootstrapping is the ideal tool.
+
+Because bootstrapping simulates the process of drawing new samples from the population, it allows you to build a complete statistical distribution of your RMSE. Cross-validation simply doesn't yield enough data points (usually just 5 or 10 fold scores) to reliably calculate confidence intervals.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+### Question 9 
+
+Briefly describe model tuning and why we use it.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+Model tuning, frequently referred to as hyperparameter tuning, is the process of adjusting the external configuration "settings" of a machine learning algorithm. While a model automatically learns its internal parameters (like the mathematical weights or coefficients) directly from the training data, hyperparameters are the structural choices made by the data scientist before training even begins. Examples include setting the maximum depth of a decision tree, choosing the learning rate for a neural network, or deciding the number of neighbors to look at in a K-Nearest Neighbors model. Tuning involves systematically testing different combinations of these settings to see which configuration produces the most accurate predictions.
+
+We use model tuning to optimize the model's overall performance and ensure it generalizes well to brand-new, unseen data. Specifically, it is the primary tool we use to manage the bias-variance trade-off, and prevent over/underfitting.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+### Question 10 
+
+What are two common performance metrics when dealing with a regression ML problem?
+
+::: {.callout-tip icon="false"}
+## Solution
+
+Root Mean Squared Error (RMSE) and R-Squared ($R^2$).
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+What are two common performance metrics when dealing with a classification ML problem?
+
+::: {.callout-tip icon="false"}
+## Solution
+
+Accuracy = (TP + TN)/n = % of correct predictions out of all predictions
+
+Precision = TP/(TP + FP) = Positive Predictive Value (PPV) = % of correct "A" predictions out of all "A" predictions
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+### Question 11
+
+Classify each question/problem below as either prediction or inferential. Explain your reasoning for each.
+
+A company with a subscription based service (for example Netflix, Disney+, New York Times, etc) has data concerning customer interactions with a them, including features like the number of customer service calls, quality of service calls, subscription length, engagement with the service, discounted service, etc. They are interested in two questions:
+
+1. Does a high number of service calls impact a customer's likelihood of churn in the next month (leave the company/drop the service)?
+
+::: {.callout-tip icon="false"}
+## Solution
+
+This is an inferential problem. The primary goal of this question is to understand the relationship between a specific input variable (the number of service calls) and the target outcome (churn). The company is asking "why" churn happens and is trying to isolate the effect of one particular feature. They want to know if there is a statistically significant link between calling customer service often and leaving the platform. This requires an inferential model that prioritizes interpretability so you can clearly see how that specific variable influences the result.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+2. How likely is it that a customer will churn in the next month (leave the company/drop the service)?
+
+::: {.callout-tip icon="false"}
+## Solution
+
+This is a prediction problem. The primary goal here is to forecast a future event as accurately as possible for individual customers. The company wants to generate a specific probability score (e.g., "Customer A has an 85% chance of churning"). In this scenario, understanding why the customer is churning or isolating the exact impact of their service calls takes a back seat to simply getting the most accurate forecast possible. The company would likely use a highly flexible, predictive machine learning model to flag these high-risk customers so they can immediately send them targeted retention offers.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
