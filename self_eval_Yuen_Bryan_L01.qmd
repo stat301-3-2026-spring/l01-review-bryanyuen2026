@@ -40,7 +40,7 @@ The goal of this lab is to review machine learning/predictive modeling vocabular
 
 When completing the following questions ensure your solutions are neatly formatted and clearly indicated. Consider including diagrams/images in some of your solutions, if it helps to make things easier to describe/discuss.
 
-### Question 1
+### Question 1 :white_check_mark:
 
 Provide a brief outline/overview of the steps involved in a supervised machine learning process. Could provide this as a bulleted list. 
 
@@ -65,25 +65,41 @@ Provide a brief outline/overview of the steps involved in a supervised machine l
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+3 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+I demonstrated a solid grasp of the general machine learning components, but I made a major methodological error in the sequence. In Step 6, I stated that the model is tested using the unseen testing set, and then in Step 7, I wrote that if performance isn't optimal, I adjust hyperparameters and retrain. This causes data leakage. I should never adjust my model based on test set performance; the test set must remain entirely unseen until the very end. The official solutions emphasize setting up a resampling technique on the training data to handle tuning, selecting the best model, fitting that final model to the entire training dataset, and only then doing a final assessment on the testing data.
 
-## Updated solution
+## Updated Solution
 
-*Only required if a 3 or less is scored on the question.*
+1. Data Collection: Gather the raw data.
 
+2. Data Preparation and Cleaning: Address missing values, outliers, and formatting.
+
+3. Split the Data: Divide the data into a training set and a testing set (usually stratifying by the outcome variable).
+
+4. Setup Resampling: Establish a resampling technique, such as v-fold cross-validation, strictly on the training data.
+
+5. Feature Engineering and Model Specifications: Build the recipe for data transformations and define the model structures to test.
+
+6. Tune and Evaluate: Use the resampled training data to test different hyperparameter combinations and evaluate the performance of each model variation.
+
+7. Select the Best Model: Choose the model and hyperparameter combination that performed best during cross-validation.
+
+8. Fit the Final Model: Train this best model on the entire training dataset.
+
+9. Final Assessment: Evaluate this finalized model exactly once on the unseen testing data to estimate real-world performance.
 
 :::
 
-### Question 2
+### Question 2 :white_check_mark:
 
 Explain the difference between supervised and unsupervised learning.
 
@@ -96,21 +112,17 @@ In contrast, unsupervised learning involves learning by discovery. It uses raw, 
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I captured the core distinction: supervised learning uses labeled data with a known target to predict outcomes, whereas unsupervised learning uses raw, unlabeled data to discover hidden structures.
 
 :::
 
@@ -385,7 +397,7 @@ Explain the score. Clearly identify what your misunderstandings were. Explain wh
 
 :::
 
-### Question 5 
+### Question 5 :white_check_mark:
 
 Explain the difference between a regression and classification machine learning (ML) problems.
 
@@ -396,25 +408,21 @@ The fundamental difference between regression and classification machine learnin
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I clearly and accurately distinguished between predicting a continuous, numerical value (regression) and a discrete, categorical label (classification).
 
 :::
 
-### Question 6 
+### Question 6 :white_check_mark:
 
 When splitting the data, why is it useful to stratify by the outcome/target variable? 
 
@@ -431,25 +439,21 @@ Machine learning algorithms need sufficient examples of every class to learn the
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I correctly identified the need to maintain the same proportion of target classes and provided a great real-world example of handling imbalanced data.
 
 :::
 
-### Question 7 
+### Question 7 :white_check_mark:
 
 Briefly describe how v-fold cross validation with repeats is used to estimate test RMSE. Also provide an explanation of why we use it. 
 
@@ -470,25 +474,21 @@ We use repeated $v$-fold cross-validation primarily to reduce the variance of ou
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+My breakdown of the inner loop (standard CV) and outer loop (repeats) was clear, and I correctly identified that repeating reduces the variance of the performance estimate.
 
 :::
 
-### Question 8
+### Question 8 :white_check_mark:
 
 When might we use a bootstrap resampling procedure instead of v-fold cross validation to estimate test RMSE?
 
@@ -503,25 +503,21 @@ Because bootstrapping simulates the process of drawing new samples from the popu
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I correctly identified that bootstrapping is ideal for small datasets to reduce variance, which aligns perfectly with the official solutions.
 
 :::
 
-### Question 9 
+### Question 9 :white_check_mark:
 
 Briefly describe model tuning and why we use it.
 
@@ -534,25 +530,21 @@ We use model tuning to optimize the model's overall performance and ensure it ge
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I accurately described hyperparameters as structural choices made prior to training, and I correctly linked the tuning process directly to managing the bias-variance trade-off.
 
 :::
 
-### Question 10 
+### Question 10 :white_check_mark:
 
 What are two common performance metrics when dealing with a regression ML problem?
 
@@ -563,21 +555,17 @@ Root Mean Squared Error (RMSE) and R-Squared ($R^2$).
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+My listed metrics, RMSE and R-Squared ($R^2$), match the model solutions perfectly.
 
 :::
 
@@ -592,25 +580,21 @@ Precision = TP/(TP + FP) = Positive Predictive Value (PPV) = % of correct "A" pr
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+4 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I listed Accuracy and Precision. While Precision is a valid classification metric, the official solution key specifically lists Area Under the Curve (ROC AUC) and the F1 measure alongside Accuracy. I lost one point simply for missing the specific metrics the instructor explicitly targeted in their key, though my knowledge is functionally correct.
 
 :::
 
-### Question 11
+### Question 11 :white_check_mark:
 
 Classify each question/problem below as either prediction or inferential. Explain your reasoning for each.
 
@@ -625,21 +609,17 @@ This is an inferential problem. The primary goal of this question is to understa
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I accurately identified this as an inferential problem because the goal is to isolate the effect of a variable to understand the "why."
 
 :::
 
@@ -652,21 +632,17 @@ This is a prediction problem. The primary goal here is to forecast a future even
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I correctly identified this as a prediction problem because the goal is to maximize forecast accuracy regardless of the underlying reasons.
 
 :::
 
