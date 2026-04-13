@@ -40,7 +40,7 @@ The goal of this lab is to review machine learning/predictive modeling vocabular
 
 When completing the following questions ensure your solutions are neatly formatted and clearly indicated. Consider including diagrams/images in some of your solutions, if it helps to make things easier to describe/discuss.
 
-### Question 1 :white_check_mark:
+### Question 1 
 
 Provide a brief outline/overview of the steps involved in a supervised machine learning process. Could provide this as a bulleted list. 
 
@@ -99,7 +99,7 @@ I demonstrated a solid grasp of the general machine learning components, but I m
 
 :::
 
-### Question 2 :white_check_mark:
+### Question 2 
 
 Explain the difference between supervised and unsupervised learning.
 
@@ -139,21 +139,17 @@ Descriptive models are designed to summarize and explain historical data, focusi
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I accurately described that these models summarize what happened or what currently exists without trying to forecast the future or establish causal relationships.
 
 :::
 
@@ -166,21 +162,17 @@ Inferential models shift the focus toward understanding "why" something happened
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I correctly identified that inferential models unpack the "why" and test hypotheses to understand causal relationships between variables.
 
 :::
 
@@ -193,21 +185,17 @@ Predictive models are built with the primary goal of forecasting "what will happ
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I clearly explained that predictive models prioritize pure forecast accuracy for new data over explaining the underlying reasons.
 
 :::
 
@@ -226,21 +214,17 @@ A mechanistic model assumes a specific underlying mathematical structure or "mec
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I correctly explained that mechanistic models assume a specific underlying mathematical structure or functional form.
 
 :::
 
@@ -255,21 +239,17 @@ An empirically driven model takes the opposite approach: it makes no strict assu
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I accurately described empirically driven models as letting the data dictate the shape without strict assumptions about the mathematical form.
 
 :::
 
@@ -286,21 +266,17 @@ Empirically driven models align with Nonparametric models: Because they do not a
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I correctly linked mechanistic models to parametric models and empirically driven models to nonparametric models.
 
 :::
 
@@ -315,21 +291,17 @@ Mechanistic models are generally much easier to interpret. Because a mechanistic
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I clearly articulated that mechanistic models are easier to interpret because of their defined mathematical formulas, whereas empirically driven models can become "black boxes."
 
 :::
 
@@ -346,21 +318,17 @@ Mechanistic models are relatively inflexible (rigid). If you assume a linear mec
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I accurately identified empirically driven models as highly flexible and mechanistic models as relatively inflexible or rigid.
 
 :::
 
@@ -379,25 +347,21 @@ Because they are highly flexible, empirically driven models have low bias. They 
 
 :::
 
-### Self Evaluation
-
 ::: {.callout-important icon="false"}
+
+### Self Evaluation
 
 ## Score 
 
+5 points
 
 ## Explanation
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+I correctly mapped the bias-variance trade-off, noting that mechanistic models tend to have higher bias and lower variance, while empirically driven models have lower bias but higher variance.
 
 :::
 
-### Question 5 :white_check_mark:
+### Question 5 
 
 Explain the difference between a regression and classification machine learning (ML) problems.
 
@@ -422,7 +386,7 @@ I clearly and accurately distinguished between predicting a continuous, numerica
 
 :::
 
-### Question 6 :white_check_mark:
+### Question 6 
 
 When splitting the data, why is it useful to stratify by the outcome/target variable? 
 
@@ -453,7 +417,7 @@ I correctly identified the need to maintain the same proportion of target classe
 
 :::
 
-### Question 7 :white_check_mark:
+### Question 7 
 
 Briefly describe how v-fold cross validation with repeats is used to estimate test RMSE. Also provide an explanation of why we use it. 
 
@@ -488,7 +452,7 @@ My breakdown of the inner loop (standard CV) and outer loop (repeats) was clear,
 
 :::
 
-### Question 8 :white_check_mark:
+### Question 8 
 
 When might we use a bootstrap resampling procedure instead of v-fold cross validation to estimate test RMSE?
 
@@ -517,7 +481,7 @@ I correctly identified that bootstrapping is ideal for small datasets to reduce 
 
 :::
 
-### Question 9 :white_check_mark:
+### Question 9 
 
 Briefly describe model tuning and why we use it.
 
@@ -544,7 +508,7 @@ I accurately described hyperparameters as structural choices made prior to train
 
 :::
 
-### Question 10 :white_check_mark:
+### Question 10 
 
 What are two common performance metrics when dealing with a regression ML problem?
 
@@ -594,7 +558,7 @@ I listed Accuracy and Precision. While Precision is a valid classification metri
 
 :::
 
-### Question 11 :white_check_mark:
+### Question 11 
 
 Classify each question/problem below as either prediction or inferential. Explain your reasoning for each.
 
